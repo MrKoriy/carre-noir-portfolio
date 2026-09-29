@@ -5,7 +5,7 @@
   padding-top: var(--header-height);
 }
 
-/* UI Cleanup: quiet on the cinematic stage */
+/* UI Cleanup: тишина на видео-сцене */
 .sw-particles,
 .sw-route,
 .sw-topbar,
@@ -14,7 +14,7 @@
   display: none !important;
 }
 
-/* Desktop video coverage: Full HD, uncompressed crisp */
+/* Desktop video coverage */
 @media (min-width: 861px) {
   .sw-scene__video,
   .sw-scene__still {
@@ -28,23 +28,57 @@
   }
 
   .sw-copylayer::before {
-    width: 48% !important;
-    background: linear-gradient(90deg, rgba(251, 249, 245, 0.96) 0%, rgba(251, 249, 245, 0.75) 55%, transparent 100%) !important;
+    width: 52% !important;
+    background: linear-gradient(90deg, rgba(251, 249, 245, 0.96) 0%, rgba(251, 249, 245, 0.75) 60%, transparent 100%) !important;
   }
 
   .sw-copy {
     background: transparent !important;
     box-shadow: none !important;
-    max-width: 620px !important;
-    padding-left: 5rem !important;
+    max-width: 640px !important;
+    padding-left: clamp(2rem, 5vw, 6rem) !important;
   }
 }
 
-/* Mobile: Настоящие вертикальные ролики 9:16 (1080x1920) */
+/* Общие стили типографики: максимальный контраст и читаемость */
+.sw-copy__title {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem) !important;
+  font-weight: 700 !important;
+  color: #111215 !important; /* Глубокий премиальный графит */
+  letter-spacing: 0.02em !important;
+  line-height: 1.18 !important;
+  text-transform: uppercase !important;
+}
+
+.sw-copy__eyebrow {
+  color: #996e22 !important; /* Насыщенное античное золото */
+  letter-spacing: 0.18em !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.sw-copy__num {
+  color: #8c8f9a !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+}
+
+.sw-copy__body {
+  color: #373a42 !important; /* Высококонтрастный текст описания */
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  margin-top: 0.75rem !important;
+}
+
+/* Mobile: Свободное пространство, кнопка видна целиком, безопасные отступы */
 @media (max-width: 860px) {
   .sw-scene__video,
   .sw-scene__still {
-    height: 60% !important;
+    height: 44% !important;
     top: 0 !important;
     bottom: auto !important;
     object-fit: cover !important;
@@ -58,43 +92,80 @@
   }
 
   .sw-copylayer::before {
-    height: 44% !important;
+    height: 60% !important;
     top: auto !important;
     bottom: 0 !important;
     background: #fbf9f5 !important;
   }
 
   .sw-copy {
-    padding: 1.5rem 1.25rem !important;
+    padding: 1.25rem 1.5rem calc(1.75rem + env(safe-area-inset-bottom, 18px)) !important;
     max-width: 100% !important;
     background: #fbf9f5 !important;
     border-top: 1px solid var(--border-subtle) !important;
     z-index: 10 !important;
   }
+
+  .sw-copy__title {
+    font-size: clamp(1.4rem, 5.8vw, 1.8rem) !important;
+    line-height: 1.2 !important;
+    margin: 6px 0 0 !important;
+    color: #111215 !important;
+  }
+
+  .sw-copy__eyebrow {
+    font-size: 0.72rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .sw-copy__body {
+    font-size: 0.92rem !important;
+    line-height: 1.45 !important;
+    margin-top: 0.45rem !important;
+    color: #373a42 !important;
+  }
+
+  .sw-copy__cta {
+    margin-top: 1.1rem !important;
+  }
+
+  .sw-btn {
+    padding: 12px 22px !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.08em !important;
+  }
 }
 
-.sw-copy__title {
-  font-family: 'Cinzel', serif !important;
-  font-size: clamp(1.8rem, 3.5vw, 3.5rem) !important;
+/* Кнопка CTA на втором слайде */
+.sw-copy__cta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 1.5rem !important;
+  pointer-events: auto !important;
+}
+
+.sw-btn {
+  text-decoration: none !important;
   font-weight: 700 !important;
-  color: #1c1d21 !important;
-  letter-spacing: 0.03em !important;
-  line-height: 1.15 !important;
-  text-transform: uppercase !important;
-}
-
-.sw-copy__eyebrow {
-  color: #b38938 !important;
-  letter-spacing: 0.25em !important;
-  font-family: 'Cinzel', serif !important;
   font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.5rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 12px 24px !important;
+  border-radius: 2px !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.sw-copy__body {
-  color: #575a65 !important;
-  font-size: 1.05rem !important;
-  line-height: 1.55 !important;
-  margin-top: 0.75rem !important;
+.sw-btn--primary {
+  color: #ffffff !important;
+  background: #1c1d21 !important;
+  border: 1px solid #1c1d21 !important;
+}
+
+.sw-btn--primary:hover {
+  background: #b38938 !important;
+  border-color: #b38938 !important;
 }
