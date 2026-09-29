@@ -293,19 +293,29 @@ function mountScrollWorld(container, config) {
   }
 
   function raf() {
-    const eps = isMobile() ? 0.02 : 0.008;   // coarser seek step on phones = fewer decodes
+    // Адаптивный порог точности декодера: устраняет микрофризы на 60fps
+    const eps = isMobile() ? 0.03 : 0.015;
     for (let i = 0; i < NSEG; i++) {
       const s = SEGMENTS[i];
       if (!s.hasClip || !s.ready || !s.video) continue;
-      // Never queue a seek while the decoder is still resolving the last one.
-      // On phones a fast flick would otherwise pile up seeks and freeze the clip;
-      // cur keeps lerping, so we snap to the latest target the moment it's free.
       if (s.video.seeking) continue;
-      if (!s.visible && Math.abs(s.cur - s.target) < 0.002) continue;
-      s.cur += (s.target - s.cur) * (reduce ? 1 : 0.18);
+      if (!s.visible && Math.abs(s.cur - s.target) < 0.003) continue;
+      
+      // Плавный отзывчивый lerp (0.28 вместо вялого 0.18): мгновенный отклик на колесико мыши
+      s.cur += (s.target - s.cur) * (reduce ? 1 : 0.28);
+      if (Math.abs(s.cur - s.target) < 0.001) s.cur = s.target;
+      
       const dur = s.video.duration || 1;
       const t = clamp(s.cur, 0, 0.999) * dur;
-      if (Math.abs(s.video.currentTime - t) > eps) { try { s.video.currentTime = t; } catch (e) {} }
+      if (Math.abs(s.video.currentTime - t) > eps) {
+        try {
+          if ('fastSeek' in s.video && typeof s.video.fastSeek === 'function') {
+            s.video.fastSeek(t);
+          } else {
+            s.video.currentTime = t;
+          }
+        } catch (e) {}
+      }
     }
     requestAnimationFrame(raf);
   }

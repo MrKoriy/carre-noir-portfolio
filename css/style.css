@@ -1,3 +1,4 @@
+/* Design Tokens */
 :root {
   --bg-canvas: #fbf9f5;
   --bg-surface: #ffffff;
@@ -11,21 +12,46 @@
   --accent-gold-hover: #9c7428;
   --accent-gold-soft: #f5ede0;
   --font-display: 'Cinzel', serif;
-  --font-sans: 'Josefin Sans', sans-serif; --container-max: 1280px; --header-height: 80px; --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+  --font-sans: 'Josefin Sans', sans-serif;
+  --container-max: 1240px;
+  --header-height: 80px;
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-canvas); color: var(--text-primary); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-body { min-height: 100vh; overflow-x: hidden; line-height: 1.6; }
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: var(--transition-smooth);
 }
+
 .container {
-  width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(1.5rem, 4vw, 3rem) !important;
+  padding-right: clamp(1.5rem, 4vw, 3rem) !important;
+}
 .site-header {
   position: fixed;
   top: 0;
