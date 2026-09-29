@@ -1,0 +1,100 @@
+.world-hero {
+  position: relative;
+  width: 100%;
+  background: #fbf9f5;
+  padding-top: var(--header-height);
+}
+
+/* UI Cleanup: quiet on the cinematic stage */
+.sw-particles,
+.sw-route,
+.sw-topbar,
+.sw-hint,
+.sw-progress {
+  display: none !important;
+}
+
+/* Desktop video coverage: Full HD, uncompressed crisp */
+@media (min-width: 861px) {
+  .sw-scene__video,
+  .sw-scene__still {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center right !important;
+    filter: none !important;
+  }
+
+  .sw-copylayer::before {
+    width: 48% !important;
+    background: linear-gradient(90deg, rgba(251, 249, 245, 0.96) 0%, rgba(251, 249, 245, 0.75) 55%, transparent 100%) !important;
+  }
+
+  .sw-copy {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: 620px !important;
+    padding-left: 5rem !important;
+  }
+}
+
+/* Mobile: Настоящие вертикальные ролики 9:16 (1080x1920) */
+@media (max-width: 860px) {
+  .sw-scene__video,
+  .sw-scene__still {
+    height: 60% !important;
+    top: 0 !important;
+    bottom: auto !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .sw-copylayer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+  }
+
+  .sw-copylayer::before {
+    height: 44% !important;
+    top: auto !important;
+    bottom: 0 !important;
+    background: #fbf9f5 !important;
+  }
+
+  .sw-copy {
+    padding: 1.5rem 1.25rem !important;
+    max-width: 100% !important;
+    background: #fbf9f5 !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    z-index: 10 !important;
+  }
+}
+
+.sw-copy__title {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  color: #1c1d21 !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+}
+
+.sw-copy__eyebrow {
+  color: #b38938 !important;
+  letter-spacing: 0.25em !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.sw-copy__body {
+  color: #575a65 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  margin-top: 0.75rem !important;
+}
