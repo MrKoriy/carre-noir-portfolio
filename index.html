@@ -4,168 +4,411 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CARRÉ NOIR — Французские натяжные потолки в Москве с 1998 года</title>
-  <meta name="description" content="Оригинальные французские натяжные потолки, тканевые системы Descor и теневой профиль EuroKraab в Москве от компании Карэ Нуар.">
+  <meta name="description" content="Оригинальные французские натяжные потолки, тканевые системы Descor и теневой профиль EuroKraab в Москве от компании Карэ Нуар. Гарантия 15 лет, монтаж за 1 день.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Carré Noir — потолок как белый холст">
+  <meta property="og:description" content="Французские натяжные потолки, Descor и теневой профиль EuroKraab в Москве с 1998 года.">
+  <meta property="og:image" content="assets/world/scene1-desktop.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f2efe9'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%230b0b0c'/%3E%3C/svg%3E">
+  <script>
+    /* Тема и интро до первой отрисовки — без вспышки */
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('cn-theme'); } catch (e) {}
+      if (!t) { var h = new Date().getHours(); t = (h >= 20 || h < 7) ? 'night' : 'day'; }
+      d.dataset.theme = t;
+      try { if (sessionStorage.getItem('cn-intro')) d.classList.add('intro-seen'); sessionStorage.setItem('cn-intro', '1'); } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/world.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Carré Noir (Карэ Нуар)",
+    "description": "Французские натяжные потолки, тканевые потолки Descor и теневой профиль EuroKraab в Москве.",
+    "foundingDate": "1998",
+    "areaServed": "Москва",
+    "address": { "@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Берёзовая аллея" },
+    "image": "assets/world/scene1-desktop.webp",
+    "priceRange": "₽₽₽"
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header">
+  <!-- Интро: чёрный квадрат раскрывается окном в интерьер -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__hole"></div>
+    <div class="intro__word"><span>Carré</span><span>Noir</span></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-symbol"></span>
-        <div>
+      <a class="brand" href="#top" aria-label="Carré Noir — на главную">
+        <span class="brand-symbol" aria-hidden="true"></span>
+        <span class="brand-words">
           <span class="brand-text">Carré Noir</span>
-          <span class="brand-sub">Paris · Москва · с 1998 года</span>
-        </div>
+          <span class="brand-sub">Paris · Москва · с 1998</span>
+        </span>
       </a>
-      <button class="menu-button" data-menu-button aria-expanded="false" aria-label="Открыть меню">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-      </button>
       <nav class="nav" data-nav aria-label="Основная навигация">
         <a href="#textures">Фактуры</a>
-        <a href="#standards">Стандарты</a>
+        <a href="#water">Защита</a>
+        <a href="#profile">Профиль</a>
         <a href="#portfolio">Интерьеры</a>
-        <a href="#calc">Калькулятор</a>
-        <a class="button button-primary button-small" href="#calc">Вызвать замерщика</a>
+        <a href="#history">История</a>
+        <a href="#calc">Смета</a>
       </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Переключить освещение">
+          <span class="theme-toggle__track"><span class="theme-toggle__knob"></span></span>
+          <span class="theme-toggle__label" data-theme-label>День</span>
+        </button>
+        <a class="button button-primary button-small magnetic hide-sm" href="#calc">Вызвать замерщика</a>
+        <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-label="Открыть меню">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="world-hero" aria-label="Кинематографичный обзор интерьеров с потолками Carré Noir">
       <div id="world"></div>
     </section>
 
-    <section class="section section-soft" id="textures">
+    <!-- Манифест + цифры -->
+    <section class="section manifest" id="manifest">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Коллекция полотен</p>
-          <h2 class="section-title">Европейские фактуры полотен</h2>
-          <p class="section-desc">Сертифицированные французские и немецкие материалы высшего экологического класса А+.</p>
+        <div class="manifest__head">
+          <div class="manifest__square" data-parallax-square aria-hidden="true"></div>
+          <p class="eyebrow" data-reveal>Манифест</p>
+          <h2 class="manifest__title" data-reveal>
+            Потолок — это пятая стена.<br>
+            <em>Мы делаем её чистым холстом.</em>
+          </h2>
+          <p class="manifest__lead" data-reveal>
+            Малевич написал «Чёрный квадрат», чтобы начать искусство с нуля. Мы начинаем интерьер с идеально белой плоскости: без швов, без запаха, без компромиссов.
+          </p>
         </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <span class="feature-tag">01 / КЛАССИКА</span>
-            <h3>Матовый шелк</h3>
-            <p>Бархатистая текстура без бликов и отражений. Создает эффект идеально отштукатуренного белоснежного потолка. Абсолютно нейтрален к солнечному свету.</p>
+
+        <div class="stats">
+          <div class="stat stat--xl" data-reveal>
+            <span class="stat__num"><span data-count="100">0</span><small>л/м²</small></span>
+            <span class="stat__label">воды удержит полотно при заливе сверху</span>
           </div>
-          <div class="feature-card">
-            <span class="feature-tag">02 / ПРЕМИУМ</span>
-            <h3>Благородный сатин</h3>
-            <p>Мягкое перламутровое светоотражение, визуально приподнимающее потолок и наполняющее комнату естественным рассеянным дневным светом.</p>
+          <div class="stat" data-reveal>
+            <span class="stat__num"><span data-count="6">0</span><small>мм</small></span>
+            <span class="stat__label">теневой зазор EuroKraab вместо плинтуса</span>
           </div>
-          <div class="feature-card">
-            <span class="feature-tag">03 / ЭКОЛОГИЯ</span>
-            <h3>Тканевые Descor (Германия)</h3>
-            <p>Дышащие бесшовные тканевые полотна без нагрева тепловой пушкой. Максимальная механическая прочность и премиальная текстильная фактура.</p>
+          <div class="stat" data-reveal>
+            <span class="stat__num"><span data-count="15">0</span><small>лет</small></span>
+            <span class="stat__label">гарантия по договору с голограммой</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__num"><span data-count="1">0</span><small>день</small></span>
+            <span class="stat__label">монтаж без пыли: уходим с чистого объекта</span>
+          </div>
+          <div class="stat stat--wide" data-reveal>
+            <span class="stat__num"><span data-count="1998" data-count-from="1960">1960</span></span>
+            <span class="stat__label">с этого года — в Москве. 27 лет от типовых квартир до пентхаусов на Патриарших</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="standards">
+    <!-- Фактуры под светом -->
+    <section class="section textures" id="textures">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Надежность и сервис</p>
-          <h2 class="section-title">Почему москвичи выбирают Карэ Нуар</h2>
-          <p class="section-desc">27 лет безупречной репутации на объектах от типовых квартир до пентхаусов на Патриарших.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <span class="feature-tag">ЗАЩИТА ОТ ЗАЛИВОВ</span>
-            <h3>100 литров на м²</h3>
-            <p>Эластичное полотно удерживает тонны воды при аварии у соседей сверху, защищая ваш дорогой паркет, мебель и ремонт от уничтожения.</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-tag">ЧИСТЫЙ МОНТАЖ</span>
-            <h3>Без пыли и грязи за 1 день</h3>
-            <p>Перфораторы с встроенным пылеудалением. Бригада аккуратно собирает за собой весь строительный мусор и уходит на чистый объект.</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-tag">ФРАНЦУЗСКИЙ СЕРТИФИКАТ</span>
-            <h3>Гарантия 15 лет по договору</h3>
-            <p>Официальный гарантийный талон с голограммой. Полотно не желтеет, не провисает и сохраняет заводское натяжение десятилетиями.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="portfolio">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Портфолио</p>
-          <h2 class="section-title">Реализованные интерьеры</h2>
-          <p class="section-desc">Фотографии реальных квартир и загородных резиденций после монтажа.</p>
-        </div>
-        <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <div class="portfolio-img" style="background-image: url('assets/world/scene1-desktop.webp');"></div>
-            <div class="portfolio-info">
-              <h3 class="portfolio-title">Белоснежный сатин в просторной гостиной</h3>
-              <p class="portfolio-meta">Москва, ЖК Символ · 120 м² · Монтаж 1 день</p>
-            </div>
-          </div>
-          <div class="portfolio-card">
-            <div class="portfolio-img" style="background-image: url('assets/world/scene2-desktop.webp');"></div>
-            <div class="portfolio-info">
-              <h3 class="portfolio-title">Теневой зазор EuroKraab и скрытый карниз</h3>
-              <p class="portfolio-meta">Москва, ЖК Сердце Столицы · 95 м² · Теневой профиль</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="calc">
-      <div class="container">
-        <div class="calc-layout">
+        <div class="section-header section-header--split">
           <div>
-            <p class="eyebrow">Онлайн-калькулятор сметы</p>
-            <h2 class="section-title">Рассчитайте точную стоимость потолка</h2>
-            <p class="section-desc">Укажите метраж и тип полотна, чтобы узнать ориентировочную стоимость с материалами и установкой.</p>
-            
+            <p class="eyebrow" data-reveal>Коллекция полотен · класс A+</p>
+            <h2 class="section-title" data-reveal>Фактуры под светом</h2>
+          </div>
+          <p class="section-desc" data-reveal>
+            Наведите курсор: это лампа. Посмотрите, как каждое полотно встречает свет — так же, как оно будет выглядеть у вас вечером.
+          </p>
+        </div>
+
+        <div class="swatches" data-swatches>
+          <article class="swatch swatch--matte" data-light data-reveal>
+            <div class="swatch__surface" aria-hidden="true"></div>
+            <div class="swatch__info">
+              <span class="feature-tag">01 · Классика</span>
+              <h3>Матовый шёлк</h3>
+              <p>Бархатистая фактура без бликов — как идеально отштукатуренный белый потолок.</p>
+              <dl class="swatch__specs"><div><dt>Блик</dt><dd>нет</dd></div><div><dt>Свет</dt><dd>рассеянный</dd></div></dl>
+            </div>
+          </article>
+          <article class="swatch swatch--satin" data-light data-reveal>
+            <div class="swatch__surface" aria-hidden="true"></div>
+            <div class="swatch__info">
+              <span class="feature-tag">02 · Премиум</span>
+              <h3>Благородный сатин</h3>
+              <p>Мягкое перламутровое отражение визуально приподнимает потолок и добавляет дневного света.</p>
+              <dl class="swatch__specs"><div><dt>Блик</dt><dd>мягкий</dd></div><div><dt>Свет</dt><dd>перламутр</dd></div></dl>
+            </div>
+          </article>
+          <article class="swatch swatch--fabric" data-light data-reveal>
+            <div class="swatch__surface" aria-hidden="true"></div>
+            <div class="swatch__info">
+              <span class="feature-tag">03 · Экология</span>
+              <h3>Ткань Descor</h3>
+              <p>Дышащее бесшовное полотно из Германии. Монтаж без тепловой пушки, текстильная фактура.</p>
+              <dl class="swatch__specs"><div><dt>Блик</dt><dd>нет</dd></div><div><dt>Свет</dt><dd>текстиль</dd></div></dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тест 100 литров: scroll-история -->
+    <section class="water" id="water" data-water>
+      <div class="water__sticky">
+        <div class="container water__grid">
+          <div class="water__copy">
+            <p class="eyebrow">Защита от заливов</p>
+            <h2 class="section-title">Соседи сверху<br>забыли кран</h2>
+            <div class="water__meter">
+              <span class="water__liters" data-water-liters>0</span>
+              <span class="water__unit">литров<br>на м²</span>
+            </div>
+            <ol class="water__steps">
+              <li data-step="0">Вода прорывается через перекрытие.</li>
+              <li data-step="1">Эластичное полотно принимает её, как чаша. Паркет и мебель — сухие.</li>
+              <li data-step="2">Мастер сливает воду через светильник — полотно возвращает идеальную форму.</li>
+            </ol>
+          </div>
+          <div class="water__scene">
+            <svg viewBox="0 0 1000 640" role="img" aria-label="Схема: натяжное полотно удерживает воду и защищает комнату">
+              <defs>
+                <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#7fb3d5" stop-opacity=".55"/>
+                  <stop offset="1" stop-color="#3a7ca5" stop-opacity=".85"/>
+                </linearGradient>
+                <pattern id="parquet" width="40" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M0 20 L20 0 M20 20 L40 0" class="w-parquet"/>
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width="1000" height="70" class="w-slab"/>
+              <text x="40" y="45" class="w-caption">Квартира сверху</text>
+              <g data-water-drops>
+                <circle cx="380" cy="90" r="6" class="w-drop"/>
+                <circle cx="520" cy="110" r="5" class="w-drop"/>
+                <circle cx="640" cy="95" r="6" class="w-drop"/>
+              </g>
+              <path data-water-body class="w-water" d="M60 150 Q500 150 940 150 Z"/>
+              <path data-water-membrane class="w-membrane" d="M60 150 Q500 150 940 150"/>
+              <line x1="60" y1="70" x2="60" y2="590" class="w-wall"/>
+              <line x1="940" y1="70" x2="940" y2="590" class="w-wall"/>
+              <rect x="60" y="560" width="880" height="30" fill="url(#parquet)" class="w-floor"/>
+              <line x1="60" y1="560" x2="940" y2="560" class="w-wall"/>
+              <!-- диван -->
+              <path class="w-furniture" d="M300 560 v-60 q0-20 20-20 h260 q20 0 20 20 v60 M280 560 v-40 h40 M580 520 h40 v40"/>
+              <!-- светильник -->
+              <path class="w-furniture" d="M760 560 v-120 M730 440 h60 l-12-30 h-36 z"/>
+              <text x="500" y="620" text-anchor="middle" class="w-caption" data-water-status>Ремонт в безопасности</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Теневой профиль -->
+    <section class="section profile" id="profile">
+      <div class="container profile__grid">
+        <div class="profile__media" data-reveal>
+          <img src="assets/world/scene2-desktop.webp" alt="Теневой зазор EuroKraab и скрытый карниз с подсветкой" loading="lazy">
+          <span class="profile__glow" aria-hidden="true"></span>
+        </div>
+        <div class="profile__copy">
+          <p class="eyebrow" data-reveal>Инженерные системы</p>
+          <h2 class="section-title" data-reveal>Линия толщиной<br>в шесть миллиметров</h2>
+          <p class="section-desc" data-reveal>Теневой профиль EuroKraab отделяет потолок от стены тонкой тенью. Ни плинтусов, ни пластиковых вставок — только архитектура. Ночью в этой линии живёт свет.</p>
+          <div class="gap-diagram" data-draw>
+            <svg viewBox="0 0 520 300" role="img" aria-label="Разрез теневого профиля: зазор 6 мм между стеной и полотном">
+              <rect x="0" y="0" width="520" height="60" class="g-slab"/>
+              <rect x="0" y="60" width="90" height="240" class="g-wall"/>
+              <path class="g-line" d="M90 120 H140 V100 H170"/>
+              <path class="g-line" d="M110 120 V60"/>
+              <line x1="120" y1="140" x2="520" y2="140" class="g-membrane"/>
+              <rect x="90" y="132" width="30" height="16" class="g-gap"/>
+              <line x1="96" y1="128" x2="116" y2="128" class="g-led"/>
+              <g class="g-dim">
+                <line x1="90" y1="180" x2="120" y2="180"/>
+                <line x1="90" y1="170" x2="90" y2="190"/>
+                <line x1="120" y1="170" x2="120" y2="190"/>
+                <text x="140" y="186">6 мм — теневой зазор</text>
+              </g>
+              <text x="300" y="125" class="g-label">полотно</text>
+              <text x="200" y="40" class="g-label g-label--inv">перекрытие</text>
+              <text x="12" y="280" class="g-label g-label--inv">стена</text>
+            </svg>
+          </div>
+          <ul class="ticks">
+            <li data-reveal>Профиль 6 мм по периметру, без декоративной вставки</li>
+            <li data-reveal>Скрытые карнизы: шторы выходят прямо из потолка</li>
+            <li data-reveal>Световые линии и треки, встроенные в плоскость</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Портфолио -->
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-header section-header--split">
+          <div>
+            <p class="eyebrow" data-reveal>Портфолио</p>
+            <h2 class="section-title" data-reveal>До и после</h2>
+          </div>
+          <p class="section-desc" data-reveal>Потяните ручку. Один день работы бригады — и потолок перестаёт быть проблемой.</p>
+        </div>
+
+        <!-- Иллюстрация «до» сделана фильтрами. Замените на реальные фото объекта: data-before / data-after -->
+        <div class="compare" data-compare data-reveal>
+          <img class="compare__img" src="assets/world/scene1-desktop.webp" alt="Гостиная с белоснежным сатиновым потолком после монтажа" loading="lazy">
+          <div class="compare__before" data-compare-before>
+            <img class="compare__img compare__img--before" src="assets/world/scene1-desktop.webp" alt="" loading="lazy">
+            <svg class="compare__damage" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <radialGradient id="stain"><stop offset="0" stop-color="#8a6a2a" stop-opacity=".45"/><stop offset="1" stop-color="#8a6a2a" stop-opacity="0"/></radialGradient>
+              </defs>
+              <ellipse cx="640" cy="70" rx="150" ry="55" fill="url(#stain)"/>
+              <path d="M120 40 L190 70 L230 62 L300 95 L330 90 M560 20 L600 55 L590 80 L640 110 M800 30 L830 60 L880 66" stroke="#3b342b" stroke-opacity=".55" stroke-width="2" fill="none"/>
+              <line x1="0" y1="118" x2="1000" y2="102" stroke="#3b342b" stroke-opacity=".25" stroke-width="3" stroke-dasharray="40 8"/>
+            </svg>
+          </div>
+          <span class="compare__tag compare__tag--before">До</span>
+          <span class="compare__tag compare__tag--after">После</span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после" data-compare-range>
+          <span class="compare__handle" aria-hidden="true"><span></span></span>
+        </div>
+
+        <div class="cases">
+          <article class="case" data-reveal>
+            <div class="case__img" style="background-image:url('assets/world/scene1-desktop.webp')"></div>
+            <div class="case__info">
+              <span class="case__num">01</span>
+              <div>
+                <h3>Белоснежный сатин в просторной гостиной</h3>
+                <p>Москва, ЖК Символ · 120 м² · монтаж 1 день</p>
+              </div>
+            </div>
+          </article>
+          <article class="case case--offset" data-reveal>
+            <div class="case__img" style="background-image:url('assets/world/scene2-desktop.webp')"></div>
+            <div class="case__info">
+              <span class="case__num">02</span>
+              <div>
+                <h3>Теневой зазор EuroKraab и скрытый карниз</h3>
+                <p>Москва, ЖК Сердце Столицы · 95 м² · теневой профиль</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- История: горизонтальная лента -->
+    <!-- TODO: сверить даты и события 2008–2020 с реальной историей компании -->
+    <section class="history" id="history" data-history>
+      <div class="history__sticky">
+        <div class="container history__head">
+          <p class="eyebrow">История</p>
+          <h2 class="section-title">27 лет<br>над головой</h2>
+        </div>
+        <div class="history__rail" data-history-rail>
+          <article class="milestone"><span class="milestone__year">1998</span><h3>Начало</h3><p>Первые французские полотна на объектах Москвы. Название — в честь «Чёрного квадрата».</p></article>
+          <article class="milestone"><span class="milestone__year">2008</span><h3>Ткань Descor</h3><p>Немецкие тканевые системы: бесшовно, без нагрева, с текстильной фактурой.</p></article>
+          <article class="milestone"><span class="milestone__year">2015</span><h3>Теневой профиль</h3><p>EuroKraab и зазор 6 мм — потолок становится частью архитектуры.</p></article>
+          <article class="milestone"><span class="milestone__year">2020</span><h3>Свет в плоскости</h3><p>Световые линии, треки и скрытые карнизы, встроенные в полотно.</p></article>
+          <article class="milestone milestone--now"><span class="milestone__year">2026</span><h3>Сегодня</h3><p>Гарантия 15 лет по договору и бригады, которые уходят с чистого объекта.</p></article>
+          <div class="history__progress" aria-hidden="true"><span data-history-progress></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Конфигуратор сметы -->
+    <section class="section calc" id="calc">
+      <div class="container">
+        <div class="section-header section-header--split">
+          <div>
+            <p class="eyebrow" data-reveal>Онлайн-смета</p>
+            <h2 class="section-title" data-reveal>Соберите свой потолок</h2>
+          </div>
+          <p class="section-desc" data-reveal>Цена считается сразу. Точную фиксированную смету инженер назовёт после бесплатного лазерного замера.</p>
+        </div>
+
+        <div class="config">
+          <form class="config__form" data-config onsubmit="return false">
+            <fieldset class="field">
+              <legend class="form-label">Помещение</legend>
+              <div class="chips" data-rooms></div>
+            </fieldset>
+
+            <div class="field">
+              <label class="form-label" for="cfg-area">Площадь <output class="field__value" data-area-out>20 м²</output></label>
+              <input class="range" type="range" id="cfg-area" min="3" max="200" step="1" value="20" data-area>
+            </div>
+
+            <fieldset class="field">
+              <legend class="form-label">Фактура</legend>
+              <div class="tex-picker" data-textures></div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend class="form-label">Опции</legend>
+              <div class="options" data-options></div>
+            </fieldset>
+          </form>
+
+          <aside class="config__summary" aria-live="polite">
+            <div class="plan" data-plan aria-label="План потолка"></div>
+            <div class="price">
+              <span class="price__label">Ориентировочно</span>
+              <span class="price__value"><span data-price>0</span> ₽</span>
+              <span class="price__note">полотно, профиль и монтаж</span>
+            </div>
+            <ul class="breakdown" data-breakdown></ul>
+            <div class="share">
+              <a class="button button-primary magnetic" data-share-tg target="_blank" rel="noopener">Отправить в Telegram</a>
+              <a class="button button-ghost magnetic" data-share-wa target="_blank" rel="noopener">WhatsApp</a>
+              <button class="button button-ghost" type="button" data-share-copy>Скопировать</button>
+            </div>
             <div class="trust-badge">
-              <div style="font-size: 1.5rem; color: var(--accent-gold);">✓</div>
+              <span class="trust-badge__sq" aria-hidden="true"></span>
               <div>
                 <h4>Бесплатный выезд инженера по Москве</h4>
-                <p>Замерщик приедет с образцами всех полотен и каталогами профилей EuroKraab, сделает лазерную съемку и назовет точную фиксированную смету.</p>
+                <p>С образцами всех полотен и каталогами EuroKraab. Лазерная съёмка и фиксированная смета на месте.</p>
               </div>
             </div>
-          </div>
-
-          <div class="calc-box">
-            <form id="calc-form">
-              <div class="form-group">
-                <label class="form-label" for="calc-area">Площадь помещений (м²)</label>
-                <input class="form-input" type="number" id="calc-area" placeholder="Например: 45" min="5" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="calc-system">Материал и тип монтажа</label>
-                <select class="form-select" id="calc-system">
-                  <option value="eurokraab">Французский белый мат (Классика)</option>
-                  <option value="kraab-tracks">Теневой зазор EuroKraab (6 мм)</option>
-                  <option value="lumfer">Тканевый бесшовный Descor (Германия)</option>
-                </select>
-              </div>
-              <button class="button button-primary" type="submit" style="width: 100%; margin-top: 1rem;">Рассчитать стоимость</button>
-              <div class="calc-result-box" id="calc-result"></div>
-            </form>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="brand">
-        <span class="brand-symbol"></span>
-        <span class="brand-text" style="color: #ffffff;">Carré Noir</span>
+    <div class="container">
+      <div class="footer-mark" aria-hidden="true">
+        <span class="footer-mark__sq"></span>
+        <span class="footer-mark__word">Carré Noir</span>
       </div>
-      <p class="footer-copy">© <span data-year></span> Компания «Карэ Нуар» (Москва, Берёзовая аллея). Французские натяжные потолки с 1998 года. Все права защищены.</p>
+      <div class="footer-inner">
+        <p class="footer-copy">© <span data-year></span> Компания «Карэ Нуар» · Москва, Берёзовая аллея. Французские натяжные потолки с 1998 года.</p>
+        <nav class="footer-nav" aria-label="Нижняя навигация">
+          <a href="#textures">Фактуры</a><a href="#profile">Профиль</a><a href="#portfolio">Интерьеры</a><a href="#calc">Смета</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
